@@ -1,0 +1,32 @@
+name: Update Daily Image
+
+on:
+  schedule:
+    - cron: '0 2 * * *'  # Runs every day at 2 AM UTC
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Select random image
+        run: |
+          images=(./images/*.jpg)
+          num_images=${#images[@]}
+          random_index=$(( RANDOM % num_images ))
+          selected_image=${images[$random_index]}
+          echo "::set-output name=image_path::${selected_image}"
+
+      - name: Update README
+        run: |
+          sed -i "s|<!-- daily-image -->|<img alt=\"Daily Image\" src=\"${{ steps.select_random_image.outputs.image_path }}\" />|" README.md
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git commit -m "Update daily image"
+          git push
