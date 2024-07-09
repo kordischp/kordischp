@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <td><img alt="Daily Random Image" height="480px" width="270px" src="./images/image2.jpg" /></td>
+    <td><img alt="Daily Random Image" height="480px" width="270px" src="./images/image3.jpg" /></td>
     <td>
       <ul>
         <h2>Hi there 👋</h2>
@@ -13,15 +13,15 @@
       </ul>
     <h2>🔧 Technologies</h2>
       <div style="display: flex; align-items: center; margin-top: 20px;">
-        <img alt="Python" src="https://skillicons.dev/icons?i=py&theme=light" height="50px" style="margin-right: 10px;" />
-        <img alt="Git" src="https://skillicons.dev/icons?i=git&theme=light" height="50px" style="margin-right: 10px;" />
-        <img alt="VSCode" src="https://skillicons.dev/icons?i=vscode&theme=light" height="50px" style="margin-right: 10px;" />
-        <img alt="Fortran" src="https://skillicons.dev/icons?i=fortran&theme=light" height="50px" style="margin-right: 10px;" />
-        <img alt="Linux" src="https://skillicons.dev/icons?i=linux&theme=light" height="50px" style="margin-right: 10px;" />
-        <img alt="Godot" src="https://skillicons.dev/icons?i=godot&theme=light" height="50px" style="margin-right: 10px;" />
-        <img alt="Unreal Engine" src="https://skillicons.dev/icons?i=unreal&theme=light" height="50px" style="margin-right: 10px;" />
-        <img alt="LaTeX" src="https://skillicons.dev/icons?i=latex&theme=light" height="50px" style="margin-right: 10px;" />
-        <img alt="Raspberry Pi" src="https://skillicons.dev/icons?i=raspberrypi&theme=light" height="50px"  style="margin-right: 10px;" />
+        <img alt="Python" src="./images/image3.jpg" height="50px" style="margin-right: 10px;" />
+        <img alt="Git" src="./images/image3.jpg" height="50px" style="margin-right: 10px;" />
+        <img alt="VSCode" src="./images/image3.jpg" height="50px" style="margin-right: 10px;" />
+        <img alt="Fortran" src="./images/image3.jpg" height="50px" style="margin-right: 10px;" />
+        <img alt="Linux" src="./images/image3.jpg" height="50px" style="margin-right: 10px;" />
+        <img alt="Godot" src="./images/image3.jpg" height="50px" style="margin-right: 10px;" />
+        <img alt="Unreal Engine" src="./images/image3.jpg" height="50px" style="margin-right: 10px;" />
+        <img alt="LaTeX" src="./images/image3.jpg" height="50px" style="margin-right: 10px;" />
+        <img alt="Raspberry Pi" src="./images/image3.jpg" height="50px"  style="margin-right: 10px;" />
       </div>
     </td>
   </tr>
