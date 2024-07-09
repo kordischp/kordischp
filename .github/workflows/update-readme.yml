@@ -2,7 +2,7 @@ name: Update Daily Image
 
 on:
   schedule:
-    - cron: '0 2 * * *'  # Runs every day at 2 AM UTC
+    - cron: '0 19 * * *'  # Runs every day at 19:00 UTC
 
 jobs:
   update-readme:
@@ -22,7 +22,7 @@ jobs:
 
       - name: Update README
         run: |
-          sed -i "s|<!-- IMAGE_PLACEHOLDER -->|${{ steps.select-random-image.outputs.image_path }}|" README.md
+          sed -i 's|src="[^"]*"|src="${{ steps.select-random-image.outputs.image_path }}"|g' README.md
 
       - name: Commit changes
         run: |
