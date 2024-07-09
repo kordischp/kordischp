@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Select random image
-        id: select-random-image  # Unique ID for this step
+        id: select-random-image
         run: |
           images=(./images/*.jpg)
           num_images=${#images[@]}
@@ -22,7 +22,7 @@ jobs:
 
       - name: Update README
         run: |
-          sed -i "s|<img alt=\"Daily Random Image\" .* />|<img alt=\"Daily Random Image\" height=\"480px\" width=\"270px\" src=\"${{ steps.select-random-image.outputs.image_path }}\" />|" README.md
+          sed -i "s|<!-- IMAGE_PLACEHOLDER -->|${{ steps.select-random-image.outputs.image_path }}|" README.md
 
       - name: Commit changes
         run: |
@@ -31,4 +31,3 @@ jobs:
           git add README.md
           git commit -m "Update daily image"
           git push
-
