@@ -3,6 +3,11 @@ name: Update Daily Image
 on:
   schedule:
     - cron: '0 19 * * *'  # Runs every day at 19:00 UTC
+  workflow_dispatch:  # Enable manual triggering
+    inputs:
+      manual_trigger:
+        description: 'Manually trigger the workflow'
+        default: 'true'
 
 jobs:
   update-readme:
