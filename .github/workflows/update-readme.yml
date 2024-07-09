@@ -2,8 +2,8 @@ name: Update Daily Image
 
 on:
   schedule:
-    - cron: '0 19 * * *'  # Runs every day at 19:00 UTC
-  workflow_dispatch:  # Enable manual triggering
+    - cron: '0 19 * * *'  # Runs every day at 19 UTC
+  workflow_dispatch:
     inputs:
       manual_trigger:
         description: 'Manually trigger the workflow'
@@ -16,6 +16,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Set up Git
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+
       - name: Select random image
         id: select-random-image
         run: |
@@ -27,12 +32,12 @@ jobs:
 
       - name: Update README
         run: |
-          sed -i 's|src="[^"]*"|src="${{ steps.select-random-image.outputs.image_path }}"|g' README.md
+          sed -i '0,/src="[^"]*"/{s|src="[^"]*"|src="${{ steps.select-random-image.outputs.image_path }}"|}' README.md
 
       - name: Commit changes
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
           git add README.md
           git commit -m "Update daily image"
-          git push
+          git push origin HEAD:main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
