@@ -21,18 +21,35 @@ jobs:
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
 
+      - name: Get current image
+        id: get-current-image
+        run: |
+          current_image=$(grep -oP '(?<=src=").*?(?=")' README.md)
+          echo "current_image=${current_image}" >> $GITHUB_ENV
+
       - name: Select random image
         id: select-random-image
         run: |
           images=(./images/*.jpg)
           num_images=${#images[@]}
-          random_index=$(( RANDOM % num_images ))
-          selected_image=${images[$random_index]}
-          echo "::set-output name=image_path::${selected_image}"
+          current_image=${{ env.current_image }}
+          
+          selected_image=${images[0]}  # Default to the first image in case of an infinite loop
+          if [ $num_images -gt 1 ]; then
+            while : ; do
+              random_index=$(( RANDOM % num_images ))
+              selected_image=${images[$random_index]}
+              if [ "$selected_image" != "$current_image" ]; then
+                break
+              fi
+            done
+          fi
+          
+          echo "selected_image=${selected_image}" >> $GITHUB_ENV
 
       - name: Update README
         run: |
-          sed -i '0,/src="[^"]*"/{s|src="[^"]*"|src="${{ steps.select-random-image.outputs.image_path }}"|}' README.md
+          sed -i '0,/src="[^"]*"/{s|src="[^"]*"|src="${{ env.selected_image }}"|}' README.md
 
       - name: Commit changes
         run: |
