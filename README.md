@@ -7,7 +7,7 @@
       <ul>
         <h2>Hi there 👋</h2>
         <li>👀 I'm interested in gamemaking, algorithms, robotics and all things Python</li>
-        <li>🌱 Currently learning SQL, Unreal Engine, and C++</li>
+        <li>🌱 Currently learning Unity and C#</li>
         <li>🕹️ Working on PC and mobile games</li>
         <li>🤝 I’m looking to collaborate on open-source projects</li>
       </ul>
