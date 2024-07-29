@@ -13,11 +13,11 @@
       </ul>
     <h2>🔧 Technologies</h2>
       <div style="display: flex; align-items: center; margin-top: 20px;">
+        <img alt="Unity" src="https://skillicons.dev/icons?i=unity&theme=light" height="50px" style="margin-right: 10px;" />
+        <img alt="C#" src="https://skillicons.dev/icons?i=cs&theme=light" height="50px" style="margin-right: 10px;" />
         <img alt="Python" src="https://skillicons.dev/icons?i=py&theme=light" height="50px" style="margin-right: 10px;" />
         <img alt="Git" src="https://skillicons.dev/icons?i=git&theme=light" height="50px" style="margin-right: 10px;" />
         <img alt="VSCode" src="https://skillicons.dev/icons?i=vscode&theme=light" height="50px" style="margin-right: 10px;" />
-        <img alt="Fortran" src="https://skillicons.dev/icons?i=fortran&theme=light" height="50px" style="margin-right: 10px;" />
-        <img alt="Linux" src="https://skillicons.dev/icons?i=linux&theme=light" height="50px" style="margin-right: 10px;" />
         <img alt="Godot" src="https://skillicons.dev/icons?i=godot&theme=light" height="50px" style="margin-right: 10px;" />
         <img alt="Unreal Engine" src="https://skillicons.dev/icons?i=unreal&theme=light" height="50px" style="margin-right: 10px;" />
         <img alt="LaTeX" src="https://skillicons.dev/icons?i=latex&theme=light" height="50px" style="margin-right: 10px;" />
