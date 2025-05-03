@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <td><img alt="Daily Random Image" height="480px" width="270px" src="./images/image9.jpg" /></td>
+    <td><img alt="Daily Random Image" height="480px" width="270px" src="./images/image1.jpg" /></td>
     <td>
       <ul>
         <h2>Hi there 👋</h2>
